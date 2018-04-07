@@ -1,2 +1,2 @@
-# spring-boot-user-api
+# About
 RESTful API for user authentication.
