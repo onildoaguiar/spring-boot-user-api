@@ -10,6 +10,6 @@ public class UserController {
     @RequestMapping("/user/signIn")
     @ResponseBody
     public String signIn(){
-        return "Hello World!";
+        return "Hello Spring Boot!";
     }
 }
