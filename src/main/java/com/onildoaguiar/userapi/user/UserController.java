@@ -37,7 +37,8 @@ public class UserController {
     @PutMapping("/{id}")
     @ResponseBody
     public User update(@PathVariable Long userId, @Valid  User userDetails){
-        User user = userRepository.findById(userId)
+        User user = userRepository
+                .findById(userId)
                 .orElseThrow(() -> new ResourceNotFoundException("User not found"));
 
         user.setActive(userDetails.getActive());
@@ -45,7 +46,6 @@ public class UserController {
         user.setName(userDetails.getName());
         user.setUsername(userDetails.getUsername());
         user.setModifiedAt(Calendar.getInstance().getTime());
-
 
         User updatedUser = userRepository.save(user);
         return updatedUser;
