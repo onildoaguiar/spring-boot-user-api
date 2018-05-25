@@ -18,7 +18,8 @@ public enum UserPermission {
     }
 
     public static UserPermission getFromCode(String code) {
-        return Stream.of(UserPermission.values())
+        return Stream
+                .of(UserPermission.values())
                 .filter(t -> t.getCode().equals(code))
                 .findFirst()
                 .orElse(null);
